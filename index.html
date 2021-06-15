@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tea Coders Copy To Clipboard Example</title>
+    <style>
+        div{
+            display: flex;
+            justify-content: center;
+        }
+        div > *{
+            font-size: 30px;
+            margin: 0 10px;
+        }
+        .btn{
+            cursor: pointer;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" id="content" value="https://teacoders.in">
+        <button onclick="copyToClipboard()" class="btn">Copy</button>
+    </div>
+    <script>
+        function copyToClipboard(){
+            let contentElement = content.select();
+            if(document.execCommand('copy')){
+                alert(`Copied ${content.value}`)
+            }
+        }
+    </script>
+</body>
+</html>
